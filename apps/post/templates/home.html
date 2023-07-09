@@ -1,0 +1,19 @@
+{%extends 'main.html' %}
+{%block title%}Main{%endblock%}
+{%block content%}
+<div>
+    <a href="{%url 'create_post'%}">Create Post</a>
+</div>
+<header>
+    <h2>YourPost.</h2>
+</header>
+<section>
+    <h1>Last Post</h1>
+    {%for post in posts%}
+    <article>
+        <h2><a href="{% url 'post' post.id %}">{{post.title}}</a></h2>
+        <h3>{{post.author}}</h3>
+    </article>
+    {%endfor%}
+</section>
+{%endblock%}

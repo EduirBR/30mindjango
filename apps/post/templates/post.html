@@ -1,0 +1,30 @@
+{%extends 'main.html' %}
+{%block title%}Post{%endblock%}
+{%block content%}
+<div>
+    <a href="{%url 'home'%}">HOME</a>
+</div>
+<header>
+    <h2>YourPost.</h2>
+</header>
+<section>
+    <h1>{{post.title}}</h1>
+    <article>
+        <div style="color: white;">
+            {{post.description}}
+        </div>
+        <h3>{{post.author}}</h3>
+    </article>
+    <form action="" method="POST" class="coments">
+        {%csrf_token%}
+        {{form.as_div}}
+        <button type="submit">POST</button>
+    </form>
+    {%for comment in comments%}
+    <div class="coments">
+        <h3>{{comment.author}}</h3>
+        {{comment.description}}
+    </div>
+    {%endfor%}
+</section>
+{%endblock%}

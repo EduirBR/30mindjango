@@ -1,0 +1,14 @@
+{%extends 'main.html' %}
+{%block title%}Success{%endblock%}
+{%block content%}
+<header>
+    <h2>YourPost.</h2>
+</header>
+<section>
+    <h1>Has been Posted</h1>
+    <article>
+        <h2><a href="{%url 'home' %}">Home</a></h2>
+        <h2><a href="{%url 'create_post'%}">Create Another Post</a></h2>
+    </article>
+</section>
+{%endblock%}
